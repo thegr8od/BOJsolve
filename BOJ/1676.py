@@ -11,7 +11,7 @@ for i in range(N):
     N -= 1
 
 sum = list(str(sum))
-print(sum)
+
 cnt = 0
 while True:
     if(sum.pop() != '0'):
