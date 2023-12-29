@@ -1,7 +1,13 @@
 N = int(input())
 
-five_kg = 0
-three_kg = 0
+bag = 0
 
-if (N % 5)%3 == 0:
-    print(int((N//5) + (N % 5)/3))
+while N >= 0 :
+    if N % 5 == 0:
+        bag += (N // 5)
+        print(bag)
+        break
+    N -= 3
+    bag += 1
+else :
+    print(-1)
