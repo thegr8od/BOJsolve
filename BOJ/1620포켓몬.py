@@ -10,7 +10,6 @@ for i in range(1, n + 1):
     dic[i] = a
     dic[a] = i
     
-print(dic)
 for j in range(m):
     cmd = input().rstrip()
     if cmd.isdigit():
