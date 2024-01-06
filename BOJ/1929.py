@@ -1,14 +1,12 @@
-#소수 구하기
-import math
+text=input()
+text1=text.upper()
+m=0
+cnt=1
 
-m,n = map(int, input().split())
-
-for i in range(m, n+1):
-    if i == 1:
-        continue
-    for j in range(2, int(math.sqrt(i))+1):
-        if i % j == 0:
-            break
-
-    else:
-        print(i)
+for i in range(len(text1)) :
+    for j in range(26) :    
+        if m<text1.count(chr(j+65)) :
+            m=text1.count(chr(j+65))
+            n=chr(j+65)
+           
+print(n)
