@@ -1,12 +1,13 @@
-N, M = map(int, input().split())
+n = int(input())
+m = int(input())
 
-graph = [[] for _ in range(N+1)]	
+graph = [[] for _ in range(n+1)]	
 
-for i in range(M):
+for i in range(m):
     a, b = map(int, input().split())
     graph[a].append(b)
     graph[b].append(a)				# 양방향
-visited = [False] * (N+1)
+visited = [False] * (n+1)
 count = -1
 
 def DFS(v):
