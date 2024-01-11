@@ -8,11 +8,9 @@ def dfs(c):
 
 def bfs(s):
     q = []              # 필요한 q, v[], 변수 생성
-
     q.append(s)         # Q에 초기데이터(들) 삽입
     ans_bfs.append(s)
     v[s] = 1
-
     while q:
         c = q.pop(0)
         for n in adj[c]:
@@ -23,6 +21,7 @@ def bfs(s):
 
 N, M, V = map(int, input().split())
 adj = [[] for _ in range(N+1)]
+print(adj)
 for _ in range(M):
     s, e = map(int, input().split())
     adj[s].append(e)
