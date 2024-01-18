@@ -4,5 +4,11 @@ lst = []
 for i in range(n):
     lst.append(int(input()))
 
-print(min(lst) * len(lst))
+lst.sort()
 
+ans = []
+for i in lst:
+    ans.append(i*n)
+    n -= 1
+
+print(max(ans))
