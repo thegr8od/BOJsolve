@@ -1,6 +1,8 @@
 import sys
 
 sys.setrecursionlimit(5000)
+#sys.setrecursionlimit 함수는 파이썬 인터프리터에서 
+#허용하는 최대 재귀 깊이를 설정하는 데 사용
 input = sys.stdin.readline
 
 # dfs
@@ -24,5 +26,4 @@ for i in range(1, n+1):
         dfs(graph, i, visited)
         count += 1
 
-print(graph)
 print(count)
