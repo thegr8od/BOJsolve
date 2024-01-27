@@ -1,3 +1,5 @@
+import sys
+sys.setrecursionlimit(10**6)
 
 def dfs(x,y):
     if x <= -1 or x >=h or y<= -1 or y >=w:
@@ -19,15 +21,15 @@ while True:
     w, h = map(int, input().split())
     if w ==0 and h ==0:
         break
-    else:
-        graph = []
-        for i in range(h):
-            graph.append(list(map(int, input().split())))
+ 
+    graph = []
+    for i in range(h):
+        graph.append(list(map(int, input().split())))
 
-        result = 0
-        for i in range(h):
-            for j in range(w):
-                if dfs(i,j) == True:
-                    result += 1
+    result = 0
+    for i in range(h):
+        for j in range(w):
+            if dfs(i,j) == True:
+                result += 1
 
-        print(result)
+    print(result)
