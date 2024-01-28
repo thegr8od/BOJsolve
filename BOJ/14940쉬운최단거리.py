@@ -1,29 +1,28 @@
 from collections import deque
 import sys
 
-# 입력
 n, m = map(int, input().rstrip().split())
 box = [0 for _ in range(n)]
-tr, tc = 0, 0  # 목표지점
+tr, tc = 0, 0  
 for i in range(n):
     box[i] = list(map(int, input().rstrip().split()))
     for j in range(len(box[i])):
-        if box[i][j] == 2: # 목표지점 저장
+        if box[i][j] == 2: 
             tr, tc = i, j
 
-# 답을 출력할 리스트
-ans = [[-1 for _ in range(m)] for _ in range(n)] # 방문 할 수 없는 곳은 -1
 
-# 원래 갈 수 없는 땅인 위치는 0으로 고정
+ans = [[-1 for _ in range(m)] for _ in range(n)]
+
+
 for i in range(n):
     for j in range(m):
         if box[i][j] == 0:
             ans[i][j] = 0
 
-# 방문 리스트
+
 v = [[False for _ in range(m)] for _ in range(n)]
 
-# BFS
+
 q = deque([[tr, tc, 0]])
 ans[tr][tc] = 0
 dx = [-1, 1, 0, 0]
@@ -43,6 +42,6 @@ while q:
                 ans[nr][nc] = cnt + 1
                 q.append([nr, nc, cnt + 1])
 
-# 출력
+
 for i in range(n):
     print(*ans[i])
