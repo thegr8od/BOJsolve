@@ -20,5 +20,5 @@ n = int(input())
 data = list(map(int, input().split()))
 total = int(input())
 data.sort()
-print(binary_search(data, total, data[0], data[-1]))
+print(binary_search(data, total, 1, data[-1]))
 
