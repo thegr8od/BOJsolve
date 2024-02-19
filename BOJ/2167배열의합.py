@@ -3,7 +3,7 @@ n, m = map(int, input().split())
 data = []
 for i in range(n):
     data.append(list(map(int,input().split())))
-print(data)
+
 k = int(input())
 for i in range(k):
     a,b,c,d = map(int, input().split())
