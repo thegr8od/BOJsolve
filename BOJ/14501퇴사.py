@@ -14,5 +14,4 @@ for i in range(1, n+1):
     if d[i] <d[i-1]:
         d[i] = d[i-1]
 
-print(d)
 print(max(d))
