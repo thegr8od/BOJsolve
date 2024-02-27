@@ -1,31 +1,27 @@
 n, r, c = map(int, input().split())
-cnt = 0
 
+ans = 0
 
-def recursion(start_r,start_c,start_n):
-    global cnt
-    if start_n == 2:
-        if start_r == r and start_c == c:
-            print(cnt)
-            return
-        cnt += 1
-        if start_r == r and start_c + 1 == c:
-            print(cnt)
-            return
-        cnt += 1
-        if start_r + 1 == r and start_c == c:
-            print(cnt)
-            return
-        cnt += 1
-        if start_r + 1 == r and start_c + 1 == c:
-            print(cnt)
-            return
-        cnt += 1
+while n != 0:
+    n -= 1
+    # 1사분면
+    if r < 2 ** n and c < 2 ** n:
+        ans += ( 2 ** n) * (2 ** n) * 0
+
+    # 2사분면
+    elif r < 2 **n and c >= 2 **n:
+        ans += (2 ** n) * (2 ** n) * 1
+        c -= (2 **n)
+    
+    # 3사분면
+    elif r >= 2**n and c < 2**n:
+        ans += (2 **n ) * (2 **n) * 2
+        r -= (2 **n)
+
+    # 4사분면
     else:
-        start_n //= 2
-        recursion(start_r, start_c, start_n)
-        recursion(start_r, start_c + start_n, start_n)
-        recursion(start_r + start_n, start_c, start_n)
-        recursion(start_r + start_n, start_c + start_n, start_n)
+        ans += (2**n) * (2 **n) * 3
+        r -= (2 **n)
+        c -= (2**n)
 
-recursion(0,0, 2 ** n)
+print(ans)
