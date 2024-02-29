@@ -1,12 +1,11 @@
 n = int(input())
 
 d = [[0] * 3 for i in range(n)]
-print(d)
+
 data = []
 for _ in range(n):
     data.append(list(map(int, input().split())))
 
-print(data)
 
 d[0][0], d[0][1], d[0][2] = data[0][0],data[0][1],data[0][2]
 
