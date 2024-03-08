@@ -1,17 +1,23 @@
 n, m = map(int, input().split())
-data = sorted(list(map(int, input().split())))
+data = list(map(int, input().split()))
+
+data.sort()
+visited = [False] * n
+
 s = []
 
-def dfs(start):
-    if len(s)==m:
-        print(' '.join(map(str,s)))
+def solve(depth, N, M):
+    if depth == M:
+        print(' '.join(map(str, s)))
         return
     prev = 0
-    for i in range(start, n):
-        if prev != data[i]:
+    for i in range(N):
+        if not visited[i] and prev != data[i]:
+            visited[i] = True
             s.append(data[i])
             prev = data[i]
-            dfs(i)
+            solve(depth+1, N, M)
+            visited[i] = False
             s.pop()
 
-dfs(0)
+solve(0, n, m)
