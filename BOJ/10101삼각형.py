@@ -1,5 +1,6 @@
-a,b,c = map(int, input().split())
-
+a=int(input())
+b=int(input())
+c=int(input())
 if a+b+c==180:
     if a==60 and b==60 and c==60:
         print("Equilateral")
