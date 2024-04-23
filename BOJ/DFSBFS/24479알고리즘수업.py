@@ -1,5 +1,6 @@
 import sys
 sys.setrecursionlimit(10**6)
+input = sys.stdin.readline
 
 n,m,r = map(int, input().split())
 visited = [0] * (n+1)
