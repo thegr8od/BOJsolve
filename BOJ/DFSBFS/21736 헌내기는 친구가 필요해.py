@@ -1,4 +1,5 @@
-
+import sys
+sys.setrecursionlimit(10**6)
 
 n,m = map(int,input().split())
 
@@ -18,7 +19,6 @@ def dfs(x,y):
     visited[x][y] = True
     if graph[x][y] == 'P':
         cnt += 1
-        return
     for i in range(4):
         nx = x + dx[i]
         ny = y + dy[i]
