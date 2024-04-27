@@ -1,8 +1,18 @@
+from collections import deque
 
-def power(n,m):
-    if m == 1:
-        return n
-    else:
-        return power(n,m-1) * n
-    
-print(power(2,4))
+def bfs(graph, start, visited):
+    queue = deque([start])
+    visited[start] = True
+    while queue:
+        v = queue.popleft()
+        print(v, end =' ')
+        
+        for i in graph[v]:
+            if not visited[i]:
+                queue.append(i)
+                visited[i]= True
+
+graph = [[]]
+visited = [False] * 9
+
+bfs
