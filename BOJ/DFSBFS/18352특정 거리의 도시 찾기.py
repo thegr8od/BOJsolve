@@ -2,7 +2,7 @@ from collections import deque
 import sys
 input = sys.stdin.readline
 
-n,m,x,k = map(int, input().split())
+n,m,k,x = map(int, input().split())
 
 graph = [[] for _ in range(n+1)]
 visited = [False] * (n+1)
@@ -25,8 +25,9 @@ def bfs(start):
                 if distance[i] == k:
                     ans.append(i)
 ans = []
-ans.sort()
 bfs(x)
+
+ans.sort()
 
 if len(ans) == 0:
     print(-1)
