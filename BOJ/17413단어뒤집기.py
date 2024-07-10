@@ -24,4 +24,7 @@ for s in word:
     else:
         word_stack.append(s)
         
+while word_stack:
+    res += word_stack.pop()
+
 print(res)
